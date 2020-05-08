@@ -73,8 +73,8 @@ def set_activate_func(FUNC) -> bool:
     return clib.setFuncActivation(FUNC) == 0
 
 
-def get_activate_func(FUNC) -> str:
-    id = int(clib.getFuncActivation(FUNC))
+def get_activate_func() -> str:
+    id = int(clib.getFuncActivation())
     if id == FUNC_ID_ALAN: return 'func alan'
     if id == FUNC_ID_RELU: return 'func relu'
     if id == FUNC_ID_SIGMOID: return 'func sigmoid'
