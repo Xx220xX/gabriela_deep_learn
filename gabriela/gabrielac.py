@@ -8,19 +8,17 @@ FUNC_ID_SIGMOID = 8
 FUNC_ID_ALAN = 16
 
 clib = None
+
+
 if architecture()[0] == '64bit':
-    temp = os.path.abspath(__file__)
-    temp = os.path.realpath(temp)
-    temp = os.path.dirname(temp)
-    temp = os.path.join(temp, "lib/gabriela64.dll")
-    # temp = os.path.join(temp, "old.dll")
+    dir = os.path.dirname(sys.modules['gabriela'].__file__)
+    temp = os.path.join(dir, "lib/gabriela64.dll")
+    
     clib = c.CDLL(temp)
     # clib = c.OleDLL(temp)
 else:
-    temp = os.path.abspath(__file__)
-    temp = os.path.realpath(temp)
-    temp = os.path.dirname(temp)
-    temp = os.path.join(temp, "lib/gabriela32.dll")
+    dir = os.path.dirname(sys.modules['gabriela'].__file__)
+    temp = os.path.join(dir, "lib/gabriela32.dll")
     clib = c.CDLL(temp)
 clib.call.argtypes = [c.c_void_p, c.c_void_p]
 clib.aprende.argtypes = [c.c_void_p, c.c_void_p, c.c_double]
