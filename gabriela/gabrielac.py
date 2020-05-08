@@ -1,5 +1,5 @@
 import ctypes as c
-import os
+import os,sys
 from platform import architecture
 
 FUNC_ID_TANH = 0
