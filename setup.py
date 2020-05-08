@@ -5,7 +5,7 @@ setup(
     packages=['gabriela'],
     include_package_data=True,
     package_data={'gabriela':['lib/*']},
-    version='2.3.1',
+    version='2.3.3',
     license='MIT',
     description='a ultra fast library for deep learn,can use AMD GPU',
     author='Henrique S. Lima',
