@@ -3,7 +3,9 @@ from distutils.core import setup
 setup(
     name='gabriela',
     packages=['gabriela'],
-    version='2.3',
+    include_package_data=True,
+    package_data={'gabriela':['lib/*']},
+    version='2.3.1',
     license='MIT',
     description='a ultra fast library for deep learn,can use AMD GPU',
     author='Henrique S. Lima',
